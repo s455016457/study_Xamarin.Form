@@ -55,6 +55,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Utilities\ClassAndSubclassesFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Utilities\TypeInformation.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\ListMenuPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\DigitalClockView.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\DraggableBoxView.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\GridMenu.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\GridMenuItem.cs" />
