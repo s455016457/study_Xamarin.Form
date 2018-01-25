@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{23CAFBEC-2784-47C0-993D-D6E191B9815B}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>XamarinForm</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)App.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)MainPage_Test.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)BasePage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CustomEffect\ShadowEffect.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CustomEffect\TouchTrack\TouchActionEventArgs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CustomEffect\TouchTrack\TouchActionEventHandler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CustomEffect\TouchTrack\TouchActionType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CustomEffect\TouchTrack\TouchEffect.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Delegates\ListMenuItemClickHandle.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ErrorPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GridMenuPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ListMenuAnimatePage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ListMenuAnimatePage2.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ListMenuPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MainPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MainPage_Test.xaml.cs">
+      <DependentUpon>MainPage_Test.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)MyMasterDetailPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\MenuItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Behavior\TestAttachedBehaviorPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Behavior\TestBehaviorsPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Behavior\TestBehaviorsPage2.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Behavior\TestEffectBehaviorPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\ClassAndSubclassesPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Control\ControlBasePage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Control\TestColorPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Control\TestEditorPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Control\TestEntryPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Effect\TestDraggableBoxViewPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Effect\TestLabelShadowEffetPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\TestCarouselPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Control\TestLabelPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\IDataStore.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\ListMenuDataStore.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\MockDataStore.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utilities\AppConstant.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utilities\ClassAndSubclasses.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utilities\ClassAndSubclassesFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utilities\TypeInformation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\ListMenuPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\DraggableBoxView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\GridMenu.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\GridMenuItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\ListMenu.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\ListMenuAnimate.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\ListMenuCell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\ListMenuItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WelcomePage.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)Resources\drawable\folder.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Resources\drawable\page_white_text.png" />
+  </ItemGroup>
+</Project>
