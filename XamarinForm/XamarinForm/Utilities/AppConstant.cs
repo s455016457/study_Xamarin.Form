@@ -18,5 +18,17 @@ namespace XamarinForm.Utilities
         /// 菜单路径分隔符
         /// </summary>
         public const char MenuPathSeparator = ';';
+        /// <summary>
+        /// 用户名
+        /// </summary>
+        public const String LoginUserName = "Login_UserName";
+        /// <summary>
+        /// 登录密码
+        /// </summary>
+        public const String LoginPassword = "LogingPassword";
+        /// <summary>
+        /// 登录票据时间
+        /// </summary>
+        public const String LoginBillTime = "LoginBillTime";
     }
 }

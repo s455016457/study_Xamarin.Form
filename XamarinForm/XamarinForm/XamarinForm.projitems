@@ -23,15 +23,18 @@
     <Compile Include="$(MSBuildThisFileDirectory)CustomEffect\TouchTrack\TouchActionType.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CustomEffect\TouchTrack\TouchEffect.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Delegates\ListMenuItemClickHandle.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Delegates\LoginViewLoginButtonClickHandle.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ErrorPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GridMenuPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ListMenuAnimatePage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ListMenuAnimatePage2.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ListMenuPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)LoginPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MainPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MainPage_Test.xaml.cs">
       <DependentUpon>MainPage_Test.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Models\LoginBill.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MyMasterDetailPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\MenuItem.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\Behavior\TestAttachedBehaviorPage.cs" />
@@ -41,6 +44,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Pages\ClassAndSubclassesPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\Control\ControlBasePage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\Control\TestColorPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Control\TestDigitalClockPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\Control\TestEditorPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\Control\TestEntryPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\Effect\TestDraggableBoxViewPage.cs" />
@@ -49,6 +53,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Pages\Control\TestLabelPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\IDataStore.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\ListMenuDataStore.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\LoginService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\MockDataStore.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Utilities\AppConstant.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Utilities\ClassAndSubclasses.cs" />
@@ -63,6 +68,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Views\ListMenuAnimate.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\ListMenuCell.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\ListMenuItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\LoginView.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)WelcomePage.cs" />
   </ItemGroup>
   <ItemGroup>
