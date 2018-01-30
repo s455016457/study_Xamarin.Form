@@ -14,7 +14,7 @@ namespace XamarinForm.Pages.Control
             {
                 Children = {
                     new PDFWebView {
-                        Url= "spec.pdf",
+                        Url= "Load_Pdf_in_WebView.pdf",
                         HorizontalOptions = LayoutOptions.FillAndExpand,
                         VerticalOptions = LayoutOptions.FillAndExpand
                     }
