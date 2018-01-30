@@ -7,6 +7,7 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" Clicked="AddItem_Clicked" />
         <ToolbarItem Text="Edit"></ToolbarItem>
+        <ToolbarItem Text="PDF" Clicked="PDFItem_Clicked" />
         <ToolbarItem Icon="xamarin_logo.png" Clicked="ToolbarItem_Clicked"></ToolbarItem>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>

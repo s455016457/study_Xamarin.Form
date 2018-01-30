@@ -47,6 +47,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Pages\Control\TestDigitalClockPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\Control\TestEditorPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\Control\TestEntryPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Control\TestPDFWebViewPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\Effect\TestDraggableBoxViewPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\Effect\TestLabelShadowEffetPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\TestCarouselPage.cs" />
@@ -69,6 +70,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Views\ListMenuCell.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\ListMenuItem.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\LoginView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\PDFWebView.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)WelcomePage.cs" />
   </ItemGroup>
   <ItemGroup>

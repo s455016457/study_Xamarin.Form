@@ -41,6 +41,10 @@ namespace App1.Views
         {
             await Navigation.PushModalAsync(new NavigationPage(new NewItemPage()));
         }
+        async void PDFItem_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new NavigationPage(new PDFPage()));
+        }
 
         protected override void OnAppearing()
         {

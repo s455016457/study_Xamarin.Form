@@ -48,6 +48,11 @@ namespace XamarinForm.Services
                 ParentMenuItem = controlMenuItem
             });
 
+            controlMenuItem.ChildrenMenu.Add(new Models.MenuItem("TestPDFWebViewPage", "PDF阅读器", ImageSource.FromFile("setting.png"))
+            {
+                ParentMenuItem = controlMenuItem
+            });
+
             Models.MenuItem behaviorMenuItem = new Models.MenuItem("BehaviorGroup", "Behavior【行为】", ImageSource.FromFile("setting.png"));
             behaviorMenuItem.ParentMenuItem = baseMenuItem;
             behaviorMenuItem.ChildrenMenu = new List<Models.MenuItem>();
@@ -140,6 +145,8 @@ namespace XamarinForm.Services
                     return new Pages.Control.TestEditorPage();
                 case "TestDigitalClockPage":
                     return new Pages.Control.TestDigitalClockPage();
+                case "TestPDFWebViewPage":
+                    return new Pages.Control.TestPDFWebViewPage();
                 case "TestAttachedBehaviorPage":
                     return new Pages.Behavior.TestAttachedBehaviorPage();
                 case "TestBehaviorsPage":

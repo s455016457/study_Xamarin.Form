@@ -3033,8 +3033,8 @@ namespace XamarinForm.Droid
 			// aapt resource value: 0x7f080048
 			public const int list_item = 2131230792;
 			
-			// aapt resource value: 0x7f0800b5
-			public const int masked = 2131230901;
+			// aapt resource value: 0x7f0800b6
+			public const int masked = 2131230902;
 			
 			// aapt resource value: 0x7f0800a1
 			public const int media_actions = 2131230881;
@@ -3291,6 +3291,9 @@ namespace XamarinForm.Droid
 			// aapt resource value: 0x7f080051
 			public const int textSpacerNoTitle = 2131230801;
 			
+			// aapt resource value: 0x7f0800b4
+			public const int textView1 = 2131230900;
+			
 			// aapt resource value: 0x7f080080
 			public const int text_input_password_toggle = 2131230848;
 			
@@ -3339,8 +3342,8 @@ namespace XamarinForm.Droid
 			// aapt resource value: 0x7f08000e
 			public const int view_offset_helper = 2131230734;
 			
-			// aapt resource value: 0x7f0800b4
-			public const int visible = 2131230900;
+			// aapt resource value: 0x7f0800b5
+			public const int visible = 2131230901;
 			
 			// aapt resource value: 0x7f080093
 			public const int volume_item_container = 2131230867;
@@ -3635,6 +3638,9 @@ namespace XamarinForm.Droid
 			
 			// aapt resource value: 0x7f030043
 			public const int Toolbar = 2130903107;
+			
+			// aapt resource value: 0x7f030044
+			public const int WellCome = 2130903108;
 			
 			static Layout()
 			{

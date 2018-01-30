@@ -5,6 +5,7 @@ using System.Text;
 
 using Xamarin.Forms;
 using XamarinForm.Models;
+using XamarinForm.Pages.Control;
 using XamarinForm.Services;
 using XamarinForm.Utilities;
 
@@ -28,6 +29,7 @@ namespace XamarinForm
 
             IsUserLoggedIn = LoginService.VerificationBill(LoginBill);
             MainPage = new NavigationPage(new MyMasterDetailPage());
+            //MainPage = new TestPDFWebViewPage();
             //if (IsUserLoggedIn)
             //{
             //    MainPage = new NavigationPage(new MyMasterDetailPage());

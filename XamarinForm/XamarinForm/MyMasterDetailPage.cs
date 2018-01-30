@@ -21,32 +21,6 @@ namespace XamarinForm
             Master = listMenuPage;
 
             Detail = GetCurrentPage();
-            //if (!App.IsUserLoggedIn)
-            //{
-            //    Detail =new LoginPage();
-            //}
-            //else
-            //{
-            //    if (Application.Current.Properties.ContainsKey(AppConstant.CurrentPage))
-            //    {
-            //        object MenuItemId = Application.Current.Properties[AppConstant.CurrentPage];
-            //        if (MenuItemId != null)
-            //        {
-            //            //Detail = new NavigationPage(listMenuPage.GetPage(MenuItemId.ToString()));
-            //            Detail = listMenuPage.GetPage(MenuItemId.ToString());
-            //        }
-            //        else
-            //        {
-            //            //Detail = new NavigationPage(new WelcomePage());
-            //            Detail = new WelcomePage();
-            //        }
-            //    }
-            //    else
-            //    {
-            //        //Detail = new NavigationPage(new WelcomePage());
-            //        Detail = new WelcomePage();
-            //    }
-            //}
 
             if (Device.RuntimePlatform.Equals(Device.iOS))
             {
@@ -79,10 +53,8 @@ namespace XamarinForm
             {
                 object MenuItemId = Application.Current.Properties[AppConstant.CurrentPage];
                 if (MenuItemId != null)
-                    //Detail = new NavigationPage(listMenuPage.GetPage(MenuItemId.ToString()));
                     return listMenuPage.GetPage(MenuItemId.ToString());
             }
-            //Detail = new NavigationPage(new WelcomePage());
             return new WelcomePage();
         }
 
@@ -93,18 +65,6 @@ namespace XamarinForm
             App.SetLoginBill(null);
 
             Detail = GetCurrentPage();
-            //Navigation.InsertPageBefore(new LoginPage(), this);
-            //await Navigation.PopAsync(true);
-            //App app = App.Current as App;
-            //app.UpdateMainPage(new NavigationPage(new LoginPage()));
-
-            //App.navigationPage = new NavigationPage(new LoginPage());
-            //await App.navigationPage.PopToRootAsync();
-
-            //App.Current.MainPage = new NavigationPage(new LoginPage());
-
-            //App.Current.MainPage = new NavigationPage();
-            //await ((NavigationPage)App.Current.MainPage).PushAsync(new LoginPage(), true);
         }
     }
 }

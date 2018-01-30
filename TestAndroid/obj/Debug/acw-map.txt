@@ -1,0 +1,4 @@
+TestAndroid.MainActivity, TestAndroid;md5349d47e8190df210d1cb63908344eb04.MainActivity
+TestAndroid.MainActivity, TestAndroid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5349d47e8190df210d1cb63908344eb04.MainActivity
+TestAndroid.MainActivity;md5349d47e8190df210d1cb63908344eb04.MainActivity
+testandroid.MainActivity;md5349d47e8190df210d1cb63908344eb04.MainActivity
