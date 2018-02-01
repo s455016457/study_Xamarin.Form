@@ -9,6 +9,7 @@ namespace XamarinForm.Pages.Behavior
     {
         public TestEffectBehaviorPage()
         {
+            Title = "效果行为";
             StackLayout layout = new StackLayout
             {
                 Orientation = StackOrientation.Vertical,

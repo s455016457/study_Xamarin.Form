@@ -8,7 +8,10 @@ namespace XamarinForm.Pages.Control
 {
     public class TestColorPage : ControlBasePage
     {
-        public TestColorPage() : base() { }
+        public TestColorPage() : base()
+        {
+            Title = "颜色列表";
+        }
         protected override View GetView()
         {
             StackLayout stackLayout = new StackLayout()

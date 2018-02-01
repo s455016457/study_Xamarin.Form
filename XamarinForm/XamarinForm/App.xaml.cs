@@ -28,7 +28,11 @@ namespace XamarinForm
             RecoverLoginBill();
 
             IsUserLoggedIn = LoginService.VerificationBill(LoginBill);
-            MainPage = new NavigationPage(new MyMasterDetailPage());
+
+            //MainPage = new NavigationPage(new MyMasterDetailPage());
+            MainPage = new MyMasterDetailPage2();
+
+
             //MainPage = new TestPDFWebViewPage();
             //if (IsUserLoggedIn)
             //{

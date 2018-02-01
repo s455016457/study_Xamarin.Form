@@ -18,6 +18,7 @@ namespace XamarinForm.Pages
         };
 		public ClassAndSubclassesPage ()
 		{
+            Title = "类树状结构图";
             ClassAndSubclasses classAndSubclass = ClassAndSubclassesFactory.Create(typeof(View));
             AddItemToStackLayout(classAndSubclass, 0);
             Content = new ScrollView

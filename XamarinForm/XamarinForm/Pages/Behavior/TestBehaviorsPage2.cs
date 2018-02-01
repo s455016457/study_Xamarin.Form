@@ -10,6 +10,7 @@ namespace XamarinForm.Pages.Behavior
     {
         public TestBehaviorsPage2()
         {
+            Title = "行为2";
             StackLayout layout = new StackLayout
             {
                 Orientation = StackOrientation.Vertical,

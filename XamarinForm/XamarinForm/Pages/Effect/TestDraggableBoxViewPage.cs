@@ -12,6 +12,7 @@ namespace XamarinForm.Pages.Effect
         AbsoluteLayout absoluteLayout;
         public TestDraggableBoxViewPage()
         {
+            Title = "可拖拽的BoxView";
             Grid grid = new Grid();
             grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
             grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Star });

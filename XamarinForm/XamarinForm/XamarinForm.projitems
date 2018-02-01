@@ -25,8 +25,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)Delegates\ListMenuItemClickHandle.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Delegates\LoginViewLoginButtonClickHandle.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ErrorPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\ViewExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GridMenuPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ListMenuAnimatePage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ListMenuAnimatePage3.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ListMenuAnimatePage2.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ListMenuPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)LoginPage.cs" />
@@ -35,8 +37,27 @@
       <DependentUpon>MainPage_Test.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Models\LoginBill.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MyMasterDetailPage2.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MyMasterDetailPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\MenuItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Animation\Basic\ImageTranslateAnimationPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Animation\Basic\ImageRelativeScaleAnimationPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Animation\Basic\ImageScaleAnimationPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Animation\Basic\ImageFadeAnimationPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Animation\Basic\ImageMultipleRotationAnimationPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Animation\Basic\ImageRelativeRotateAnimationPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Animation\Basic\ImageRotateYAnimationPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Animation\Basic\ImageRotateXAnimationPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Animation\Basic\LabelRotateAnimationPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Animation\Basic\ImageRotateAnimationPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Animation\Basic\LabelFadeAnimationPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Animation\Custom\ColorAnimationPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Animation\Custom\ImageChildAnimationPage2.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Animation\Custom\ImageChildAnimationPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Animation\Custom\ImageScaleAnimationPage2.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Animation\Custom\ImageScaleAnimationPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Animation\TestCustomAnimationPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Animation\TestBasicAnimationPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\Behavior\TestAttachedBehaviorPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\Behavior\TestBehaviorsPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\Behavior\TestBehaviorsPage2.cs" />
@@ -50,6 +71,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Pages\Control\TestPDFWebViewPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\Effect\TestDraggableBoxViewPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\Effect\TestLabelShadowEffetPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\NavigationPages\Page1.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\NavigationPages\Page3.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\NavigationPages\Page2.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\TestCarouselPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\Control\TestLabelPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\IDataStore.cs" />

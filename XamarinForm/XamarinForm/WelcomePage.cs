@@ -11,6 +11,7 @@ namespace XamarinForm
 	{
         public WelcomePage()
         {
+            Title = "欢迎使用TestApp";
             ToolbarItems.Add(new ToolbarItem("Edit", "", () => { }) { Order = ToolbarItemOrder.Primary });
             Title = "WelComePage";
             Content = new StackLayout

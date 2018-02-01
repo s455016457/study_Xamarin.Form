@@ -9,8 +9,9 @@ namespace XamarinForm.Pages.Control
 {
     public class TestLabelPage : ControlBasePage
     {
-        public TestLabelPage():base()
-        {            
+        public TestLabelPage() : base()
+        {
+            Title = "Label标签";
         }
 
         protected override View GetView()

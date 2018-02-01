@@ -9,6 +9,7 @@ namespace XamarinForm.Pages.Behavior
     {
         public TestAttachedBehaviorPage()
         {
+            Title = "附加行为";
             StackLayout stackLayout = new StackLayout
             {
                 Orientation=StackOrientation.Vertical,

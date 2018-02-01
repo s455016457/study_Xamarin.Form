@@ -15,7 +15,7 @@ namespace XamarinForm
     {
         public LoginPage()
         {
-            Title = "示例APP";
+            Title = "登录";
 
             if (App.Current.Properties.ContainsKey(AppConstant.LoginUserName))
                 App.Current.Properties.Remove(AppConstant.LoginUserName);
@@ -58,20 +58,18 @@ namespace XamarinForm
                 App.SetLoginBill(loginBill);
                 App.IsUserLoggedIn = true;
 
-                MyMasterDetailPage parentPage = Parent as MyMasterDetailPage;
-                if (parentPage != null)
-                    parentPage.Detail = parentPage.GetCurrentPage();
-                //Navigation.InsertPageBefore(new MyMasterDetailPage(), this);
-                //await Navigation.PopAsync(true);
+                //MyMasterDetailPage parentPage = Parent as MyMasterDetailPage;
+                //if (parentPage != null)
+                //    parentPage.Detail = parentPage.GetCurrentPage();
 
-                    //App app = App.Current as App;
-                    //app.UpdateMainPage(new NavigationPage(new MyMasterDetailPage()));
 
-                    //App.navigationPage = new NavigationPage(new MyMasterDetailPage());
-                    //await App.navigationPage.PopToRootAsync();
-
-                    //App.Current.MainPage = new NavigationPage();
-                    //await ((NavigationPage)App.Current.MainPage).PushAsync(new MyMasterDetailPage(), true);
+                NavigationPage navigation = Parent as NavigationPage;
+                if (navigation != null)
+                {
+                    MyMasterDetailPage2 parentPage = navigation.Parent as MyMasterDetailPage2;
+                    if (parentPage != null)
+                        parentPage.Detail = new NavigationPage(parentPage.GetCurrentPage());
+                }
             }
             else
             {

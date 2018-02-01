@@ -12,6 +12,7 @@ namespace XamarinForm.Pages.Effect
 	{
 		public TestLabelShadowEffetPage ()
 		{
+            Title = "Label阴影效果";
             StackLayout layout = new StackLayout
             {
                 Orientation = StackOrientation.Vertical,

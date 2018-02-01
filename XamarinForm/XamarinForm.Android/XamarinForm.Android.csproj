@@ -666,6 +666,9 @@
   <ItemGroup>
     <AndroidAsset Include="Assets\pdfjs\web\images\treeitem-expanded%402x.png" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\meinv.jpg" />
+  </ItemGroup>
   <Import Project="..\XamarinForm\XamarinForm.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

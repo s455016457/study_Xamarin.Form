@@ -7,6 +7,10 @@ namespace XamarinForm.Pages.Control
 {
     public class TestEditorPage : ControlBasePage
     {
+        public TestEditorPage() : base()
+        {
+            Title = "多行输入框";
+        }
         protected override View GetView()
         {
             StackLayout stackLayout = new StackLayout

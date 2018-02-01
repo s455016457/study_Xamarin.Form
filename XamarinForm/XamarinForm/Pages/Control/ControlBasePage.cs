@@ -9,6 +9,7 @@ namespace XamarinForm.Pages.Control
     {
         public ControlBasePage()
         {
+            Title = "控件";
             Content = new ScrollView()
             {
                 VerticalOptions = LayoutOptions.StartAndExpand,

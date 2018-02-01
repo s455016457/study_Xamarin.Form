@@ -7,6 +7,10 @@ namespace XamarinForm.Pages.Control
 {
     public class TestEntryPage : ControlBasePage
     {
+        public TestEntryPage() : base()
+        {
+            Title = "输入框";
+        }
         protected override View GetView()
         {
             StackLayout stackLayout = new StackLayout

@@ -10,6 +10,7 @@ namespace XamarinForm.Pages.Control
     {
         public TestDigitalClockPage()
         {
+            Title = "电子表";
             Content = new DigitalClockView();
         }
     }

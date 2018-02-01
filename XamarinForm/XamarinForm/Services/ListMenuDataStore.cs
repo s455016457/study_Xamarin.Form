@@ -92,6 +92,19 @@ namespace XamarinForm.Services
                 ParentMenuItem = effectMenuItem
             });
 
+            Models.MenuItem animationMenuItem = new Models.MenuItem("Animation", "动画", ImageSource.FromFile("setting.png"));
+            animationMenuItem.ParentMenuItem = baseMenuItem;
+            animationMenuItem.ChildrenMenu = new List<Models.MenuItem>();
+            list.Add(animationMenuItem);
+            animationMenuItem.ChildrenMenu.Add(new Models.MenuItem("TestBasicAnimationPage", "基础动画效果", ImageSource.FromFile("setting.png"))
+            {
+                ParentMenuItem = animationMenuItem
+            });
+            animationMenuItem.ChildrenMenu.Add(new Models.MenuItem("TestCustomAnimationPage", "自定义动画效果", ImageSource.FromFile("setting.png"))
+            {
+                ParentMenuItem = animationMenuItem
+            });
+
             Models.MenuItem pageMenuItem = new Models.MenuItem("PageGroup", "Page", ImageSource.FromFile("setting.png"));
             pageMenuItem.ParentMenuItem = baseMenuItem;
             pageMenuItem.ChildrenMenu = new List<Models.MenuItem>();
@@ -102,7 +115,12 @@ namespace XamarinForm.Services
                 ParentMenuItem = controlMenuItem
             });
 
-            for (int i = 0; i < 10; i++)
+            pageMenuItem.ChildrenMenu.Add(new Models.MenuItem("Page1", "页面导航", ImageSource.FromFile("setting.png"))
+            {
+                ParentMenuItem = controlMenuItem
+            });
+
+            for (int i = 0; i < 5; i++)
             {
                 String MenuItemId = "MenuItemId_" + i;
                 String Title = "Title" + i;
@@ -159,6 +177,12 @@ namespace XamarinForm.Services
                     return new Pages.Effect.TestLabelShadowEffetPage();
                 case "TestDraggableBoxViewPage":
                     return new Pages.Effect.TestDraggableBoxViewPage();
+                case "TestBasicAnimationPage":
+                    return new Pages.Animation.TestBasicAnimationPage();
+                case "TestCustomAnimationPage":
+                    return new Pages.Animation.TestCustomAnimationPage();
+                case "Page1":
+                    return new Pages.NavigationPages.Page1();
                 case "TestCarouselPage":
                     return new Pages.TestCarouselPage();
                 default:

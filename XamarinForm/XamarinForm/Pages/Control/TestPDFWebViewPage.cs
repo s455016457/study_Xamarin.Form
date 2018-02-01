@@ -10,6 +10,7 @@ namespace XamarinForm.Pages.Control
     {
         public TestPDFWebViewPage()
         {
+            Title = "WebView PDF阅读器";
             Content = new StackLayout
             {
                 Children = {
