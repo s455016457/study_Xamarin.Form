@@ -669,6 +669,12 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\meinv.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\RedBug.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Xamarin120.png" />
+  </ItemGroup>
   <Import Project="..\XamarinForm\XamarinForm.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

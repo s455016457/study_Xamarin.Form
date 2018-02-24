@@ -24,8 +24,11 @@
     <Compile Include="$(MSBuildThisFileDirectory)CustomEffect\TouchTrack\TouchEffect.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Delegates\ListMenuItemClickHandle.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Delegates\LoginViewLoginButtonClickHandle.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Delegates\MineGameHandle.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ErrorPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\ViewExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Games\Board.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Games\Tile.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GridMenuPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ListMenuAnimatePage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ListMenuAnimatePage3.cs" />
@@ -40,6 +43,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)MyMasterDetailPage2.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MyMasterDetailPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\MenuItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Alter\TestAlterPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\Animation\Basic\ImageTranslateAnimationPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\Animation\Basic\ImageRelativeScaleAnimationPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\Animation\Basic\ImageScaleAnimationPage.cs" />
@@ -62,6 +66,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Pages\Behavior\TestBehaviorsPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\Behavior\TestBehaviorsPage2.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\Behavior\TestEffectBehaviorPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\BindableData\SimpleColorPickerPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\ClassAndSubclassesPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\Control\ControlBasePage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\Control\TestColorPage.cs" />
@@ -69,8 +74,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)Pages\Control\TestEditorPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\Control\TestEntryPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\Control\TestPDFWebViewPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Control\TestProgressBarPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\Effect\TestDraggableBoxViewPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\Effect\TestLabelShadowEffetPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Games\MineClearancePage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\NavigationPages\Page1.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\NavigationPages\Page3.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\NavigationPages\Page2.cs" />
@@ -84,7 +91,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Utilities\ClassAndSubclasses.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Utilities\ClassAndSubclassesFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Utilities\TypeInformation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\BaseViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\ListMenuPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\SimpleColorPickerPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\DigitalClockView.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\DraggableBoxView.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\GridMenu.cs" />
@@ -98,6 +107,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)WelcomePage.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Images\RedBug.png" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Images\Xamarin120.png" />
     <Content Include="$(MSBuildThisFileDirectory)Resources\drawable\folder.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

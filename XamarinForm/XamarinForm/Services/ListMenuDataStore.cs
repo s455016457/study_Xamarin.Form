@@ -53,6 +53,16 @@ namespace XamarinForm.Services
                 ParentMenuItem = controlMenuItem
             });
 
+            controlMenuItem.ChildrenMenu.Add(new Models.MenuItem("TestProgressBarPage", "进度条", ImageSource.FromFile("setting.png"))
+            {
+                ParentMenuItem = controlMenuItem
+            });
+
+            controlMenuItem.ChildrenMenu.Add(new Models.MenuItem("TestAlterPage", "Alter测试", ImageSource.FromFile("setting.png"))
+            {
+                ParentMenuItem = controlMenuItem
+            });
+
             Models.MenuItem behaviorMenuItem = new Models.MenuItem("BehaviorGroup", "Behavior【行为】", ImageSource.FromFile("setting.png"));
             behaviorMenuItem.ParentMenuItem = baseMenuItem;
             behaviorMenuItem.ChildrenMenu = new List<Models.MenuItem>();
@@ -120,6 +130,26 @@ namespace XamarinForm.Services
                 ParentMenuItem = controlMenuItem
             });
 
+            Models.MenuItem bindableMenuItem = new Models.MenuItem("Bindable", "数据绑定", ImageSource.FromFile("setting.png"));
+            bindableMenuItem.ParentMenuItem = baseMenuItem;
+            bindableMenuItem.ChildrenMenu = new List<Models.MenuItem>();
+            list.Add(bindableMenuItem);
+
+            bindableMenuItem.ChildrenMenu.Add(new Models.MenuItem("SimpleColorPickerPage", "简单的ColorPicker", ImageSource.FromFile("setting.png"))
+            {
+                ParentMenuItem = bindableMenuItem
+            });
+
+            Models.MenuItem garmesMenuItem = new Models.MenuItem("Garmes", "游戏", ImageSource.FromFile("setting.png"));
+            garmesMenuItem.ParentMenuItem = baseMenuItem;
+            garmesMenuItem.ChildrenMenu = new List<Models.MenuItem>();
+            list.Add(garmesMenuItem);
+
+            garmesMenuItem.ChildrenMenu.Add(new Models.MenuItem("MineClearancePage", "扫雷", ImageSource.FromFile("setting.png"))
+            {
+                ParentMenuItem = garmesMenuItem
+            });
+
             for (int i = 0; i < 5; i++)
             {
                 String MenuItemId = "MenuItemId_" + i;
@@ -161,10 +191,14 @@ namespace XamarinForm.Services
                     return new Pages.Control.TestEntryPage();
                 case "TestEditorPage":
                     return new Pages.Control.TestEditorPage();
+                case "TestAlterPage":
+                    return new Pages.Alter.TestAlterPage();
                 case "TestDigitalClockPage":
                     return new Pages.Control.TestDigitalClockPage();
                 case "TestPDFWebViewPage":
                     return new Pages.Control.TestPDFWebViewPage();
+                case "TestProgressBarPage":
+                    return new Pages.Control.TestProgressBarPage();
                 case "TestAttachedBehaviorPage":
                     return new Pages.Behavior.TestAttachedBehaviorPage();
                 case "TestBehaviorsPage":
@@ -185,6 +219,10 @@ namespace XamarinForm.Services
                     return new Pages.NavigationPages.Page1();
                 case "TestCarouselPage":
                     return new Pages.TestCarouselPage();
+                case "SimpleColorPickerPage":
+                    return new Pages.BindableData.SimpleColorPickerPage();
+                case "MineClearancePage":
+                    return new Pages.Games.MineClearancePage();
                 default:
                     return new ErrorPage("错误", "未知菜单ID【" + menuItemId + "】");
             }
