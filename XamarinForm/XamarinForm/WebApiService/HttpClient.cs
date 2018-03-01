@@ -170,8 +170,10 @@ namespace XamarinForm.WebApiService
         /// <returns></returns>
         public T EndMethod(IAsyncResult result)
         {
+            //线程阻塞一次
             result.AsyncWaitHandle.WaitOne();
             T returnValue = caller.EndInvoke(result);
+            //关闭线程阻塞语柄
             result.AsyncWaitHandle.Close();
             returnValue = returnValue == null ? default(T) : returnValue;
 
