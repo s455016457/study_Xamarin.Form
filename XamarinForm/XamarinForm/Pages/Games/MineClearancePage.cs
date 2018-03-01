@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 
 using Xamarin.Forms;
 using XamarinForm.Games;
+using XamarinForm.Extensions;
 
 namespace XamarinForm.Pages.Games
 {
@@ -31,11 +33,13 @@ namespace XamarinForm.Pages.Games
                     new RowDefinition{ Height=GridLength.Auto},
                     new RowDefinition{ Height=GridLength.Auto},
                     new RowDefinition{ Height=GridLength.Auto},
-                    new RowDefinition{ Height=new GridLength(5)},
-                    new RowDefinition{ Height=new GridLength(5)},
+                    new RowDefinition{ Height=GridLength.Auto},
+                    new RowDefinition{ Height=GridLength.Auto},
                     new RowDefinition{ Height=GridLength.Star},
                 }
             };
+
+            Padding = new Thickness(5);
 
             rowEntry = new Entry
             {
@@ -83,6 +87,8 @@ namespace XamarinForm.Pages.Games
 
             board = new Board();
 
+            BindingContext = board;
+
             board.onDefeated += Board_onDefeated;
             board.onVictory += Board_onVictory;
 
@@ -115,6 +121,41 @@ namespace XamarinForm.Pages.Games
                 IsEnabled = false,
         };
             defeatedButton.Clicked += NewGarmeButton_Clicked;
+            
+            Label unExposedTileLable = new Label
+            {
+                FontSize=Device.GetNamedSize(NamedSize.Micro,typeof(Label)),
+            };
+            unExposedTileLable.SetBinding(Label.TextProperty, "UnExposedTile", stringFormat: "未暴露雷区数量{0}");
+
+            Label unFlaggedTileCountLable = new Label
+            {
+                BindingContext = board,
+                FontSize = Device.GetNamedSize(NamedSize.Micro, typeof(Label)),
+            };
+            unFlaggedTileCountLable.SetBinding(Label.TextProperty, "FlaggedTileCount", stringFormat: "已标记雷区数量{0}");
+
+            Label unMineCountLable = new Label
+            {
+                FontSize = Device.GetNamedSize(NamedSize.Micro, typeof(Label)),
+            };
+            unMineCountLable.SetBinding(Label.TextProperty, "MineCount", stringFormat: "雷区数量{0}");
+
+            StackLayout stackLayout = new StackLayout
+            {
+                Orientation=StackOrientation.Horizontal,
+                Children = {
+                    unExposedTileLable,
+                    unFlaggedTileCountLable,
+                    unMineCountLable,
+                },
+            };
+
+            Label gameTimeLable = new Label
+            {
+                FontSize = Device.GetNamedSize(NamedSize.Micro, typeof(Label)),
+            };
+            gameTimeLable.SetBinding(Label.TextProperty, "GameTime", converter: new GameTimeValueConverter(), stringFormat: "已用游戏时间{0}");
 
             grid.Children.Add(new Label { Text="行数",}, 0, 0);
             grid.Children.Add(rowEntry, 1, 0);
@@ -125,6 +166,8 @@ namespace XamarinForm.Pages.Games
             grid.Children.Add(initButton, 0, 1);
             grid.Children.Add(newGarmeButton, 3, 1);
             grid.Children.Add(message, 0, 2);
+            grid.Children.Add(gameTimeLable, 0, 3);
+            grid.Children.Add(stackLayout, 0, 4);
             grid.Children.Add(board, 0, 5);
             grid.Children.Add(victoryButton, 0, 5);
             grid.Children.Add(defeatedButton, 0, 5);
@@ -132,6 +175,8 @@ namespace XamarinForm.Pages.Games
             Grid.SetColumnSpan(initButton, 3);
             Grid.SetColumnSpan(newGarmeButton, 3);
             Grid.SetColumnSpan(message, 6);
+            Grid.SetColumnSpan(gameTimeLable, 6);
+            Grid.SetColumnSpan(stackLayout, 6);
             Grid.SetColumnSpan(victoryButton, 6);
             Grid.SetColumnSpan(defeatedButton, 6);
             Grid.SetColumnSpan(board, 6);
@@ -139,6 +184,7 @@ namespace XamarinForm.Pages.Games
             Content = grid;
         }
 
+        #region 事件处理
         private async void Board_onVictory(params object[] age)
         {
             victoryButton.Scale = 0;
@@ -200,6 +246,81 @@ namespace XamarinForm.Pages.Games
             mineEntry.BackgroundColor = Color.White;
 
             board.Initialized(rowCount, columnCount, mineCount);
+        }
+        #endregion
+    }
+
+    class GameTimeValueConverter : IValueConverter
+    {
+        /// <summary>
+        /// 转换
+        /// </summary>
+        /// <param name="value">传入值</param>
+        /// <param name="targetType">目标类型</param>
+        /// <param name="parameter">参数</param>
+        /// <param name="culture">在转换过程中使用的文化</param>
+        /// <returns></returns>
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            if (!value.GetType().Equals(typeof(TimeSpan))) return null;
+            if (!targetType.Equals(typeof(String))) return null;
+
+            TimeSpan _value = (TimeSpan)value;
+
+            int _hours = _value.Hours;
+            int _minutes = _value.Minutes;
+            int _seconds = _value.Seconds;
+            int _milliseconds = _value.Milliseconds;
+
+            StringBuilder msg = new StringBuilder();
+            if (_hours > 0)
+                msg.AppendFormat("{0}时", _hours.ToString("#,##0"));
+            if (_hours > 0 || _minutes > 0)
+                msg.AppendFormat("{0}分", _minutes);
+
+            msg.AppendFormat("{0}秒", _seconds);
+            msg.AppendFormat("{0}毫秒", _milliseconds);
+
+            return msg.ToString();
+        }
+
+        /// <summary>
+        /// 逆转换
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="targetType"></param>
+        /// <param name="parameter"></param>
+        /// <param name="culture"></param>
+        /// <returns></returns>
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            if (!value.GetType().Equals(typeof(String))) return null;
+            if (!targetType.Equals(typeof(TimeSpan))) return null;
+                        
+            int _hours = 0,_minutes = 0, _seconds = 0, _milliseconds = 0;
+
+            int index = 0;
+            foreach (int _value in value.ToString().ExtractIntDesc())
+            {
+                switch (index)
+                {
+                    case 0:
+                        _milliseconds = _value;
+                        break;
+                    case 1:
+                        _seconds = _value;
+                        break;
+                    case 2:
+                        _minutes = _value;
+                        break;
+                    case 3:
+                        _hours = _value;
+                        break;
+                }
+                index++;
+            }
+            
+            return new TimeSpan(_hours, _minutes, _seconds, _milliseconds);
         }
     }
 }

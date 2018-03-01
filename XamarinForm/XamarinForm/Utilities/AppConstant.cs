@@ -30,5 +30,13 @@ namespace XamarinForm.Utilities
         /// 登录票据时间
         /// </summary>
         public const String LoginBillTime = "LoginBillTime";
+        /// <summary>
+        /// 签名字符串
+        /// </summary>
+        public const String Secret = "XI071U2X5Z60UMX5Z6J7MW5226J7L1O2";
+        /// <summary>
+        /// AppKey
+        /// </summary>
+        public const String AppKey = "02F0D7D712BF4633B3AA45F963F22F2A";
     }
 }

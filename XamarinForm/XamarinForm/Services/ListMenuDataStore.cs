@@ -150,6 +150,16 @@ namespace XamarinForm.Services
                 ParentMenuItem = garmesMenuItem
             });
 
+            Models.MenuItem httpRequestMenuItem = new Models.MenuItem("HttpRequest", "Http请求", ImageSource.FromFile("setting.png"));
+            httpRequestMenuItem.ParentMenuItem = baseMenuItem;
+            httpRequestMenuItem.ChildrenMenu = new List<Models.MenuItem>();
+            list.Add(httpRequestMenuItem);
+
+            httpRequestMenuItem.ChildrenMenu.Add(new Models.MenuItem("TestPage", "测试获取值", ImageSource.FromFile("setting.png"))
+            {
+                ParentMenuItem = httpRequestMenuItem
+            });
+
             for (int i = 0; i < 5; i++)
             {
                 String MenuItemId = "MenuItemId_" + i;
@@ -223,6 +233,8 @@ namespace XamarinForm.Services
                     return new Pages.BindableData.SimpleColorPickerPage();
                 case "MineClearancePage":
                     return new Pages.Games.MineClearancePage();
+                case "TestPage":
+                    return new Pages.HttpReque.TestPage();
                 default:
                     return new ErrorPage("错误", "未知菜单ID【" + menuItemId + "】");
             }

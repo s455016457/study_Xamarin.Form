@@ -18,7 +18,11 @@ namespace XamarinForm.Games
         /// <summary>
         /// 游戏开始
         /// </summary>
-        Status,
+        Start,
+        /// <summary>
+        /// 游戏暂停
+        /// </summary>
+        Stop,
         /// <summary>
         /// 游戏结束
         /// </summary>
@@ -27,6 +31,7 @@ namespace XamarinForm.Games
     public class Board : AbsoluteLayout
     {
         #region 字段
+        const string timeFormat = @"%m\:ss";
         Random random = new Random();
         /// <summary>
         /// 游戏状态
@@ -37,14 +42,16 @@ namespace XamarinForm.Games
         /// </summary>
         int flaggedTileCount = 0;
         /// <summary>
+        /// 未暴露的雷区
+        /// </summary>
+        int unExposedTile = 0;
+        int mineCount = 0;
+        /// <summary>
         /// 雷区
         /// </summary>
         Tile[,] tiles;
-        DateTime startTime,endTime;
-        /// <summary>
-        /// 未暴露的雷区
-        /// </summary>
-        int unExposedTile;
+        DateTime startTime,endTime,beginStopTime;
+        TimeSpan gameTime ,stopTime ;
         #endregion
 
         #region 属性
@@ -59,15 +66,45 @@ namespace XamarinForm.Games
         /// <summary>
         /// 地雷数量
         /// </summary>
-        public int MineCount { get; private set; }
+        public int MineCount
+        {
+            get { return mineCount; }
+            private set
+            {
+                mineCount = value;
+                OnPropertyChanged();
+            }
+        }
         /// <summary>
         /// 游戏时间
         /// </summary>
-        public long GameTime { get; private set; }
+        public TimeSpan GameTime
+        {
+            get { return gameTime; }
+            private set
+            {
+                if (gameTime != value)
+                {
+                    gameTime = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
         /// <summary>
         /// 暂停时间
         /// </summary>
-        public long StopTime { get; private set; }
+        public TimeSpan StopTime
+        {
+            get { return stopTime; }
+            private set
+            {
+                if (stopTime != value)
+                {
+                    stopTime = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
         /// <summary>
         /// 游戏状态
         /// </summary>
@@ -88,6 +125,24 @@ namespace XamarinForm.Games
             get
             {
                 return flaggedTileCount;
+            }
+        }
+        /// <summary>
+        /// 未暴露雷区
+        /// </summary>
+        public int UnExposedTile
+        {
+            set
+            {
+                if (unExposedTile != value)
+                {
+                    unExposedTile = value;
+                    OnPropertyChanged();
+                }
+            }
+            get
+            {
+                return unExposedTile;
             }
         }
         #endregion
@@ -132,8 +187,7 @@ namespace XamarinForm.Games
             {
                 tile.Initialize();
             }
-            Status = GameStatus.Initialized;
-            FlaggedTileCount = 0;
+            initializedProperty();
         }
 
         /// <summary>
@@ -144,6 +198,7 @@ namespace XamarinForm.Games
         /// <param name="MineCount"></param>
         public void Initialized(int RowCount, int ColumnCount, int MineCount)
         {
+            initializedProperty();
             if (RowCount <= 0)
             {
                 throw new Exception("行数不能小于等于0！");
@@ -187,6 +242,13 @@ namespace XamarinForm.Games
         /// </summary>
         public void Stop()
         {
+            Status = GameStatus.Stop;
+            beginStopTime = DateTime.Now;
+            Device.StartTimer(TimeSpan.FromMilliseconds(10), () =>
+            {
+                stopTime += DateTime.Now - beginStopTime;
+                return Status == GameStatus.Stop;
+            });
             if (onStop != null)
             {
                 onStop.Invoke();
@@ -197,6 +259,20 @@ namespace XamarinForm.Games
         /// </summary>
         public void Resume()
         {
+            Status = GameStatus.Start;
+            startTime = DateTime.Now;
+            //Device.StartTimer(TimeSpan.FromMilliseconds(10), () =>
+            //{
+            //    if (endTime != null&&endTime>startTime)
+            //    {
+            //        GameTime += endTime - startTime;
+            //    }
+            //    else
+            //    {
+            //        GameTime += DateTime.Now - startTime;
+            //    }
+            //    return Status == GameStatus.Start;
+            //});
             if (onResume != null)
             {
                 onResume.Invoke();
@@ -208,6 +284,15 @@ namespace XamarinForm.Games
         void Board_SizeChanged(object sender, System.EventArgs e)
         {
             throw new System.NotImplementedException();
+        }
+
+        void initializedProperty()
+        {
+            Status = GameStatus.Initialized;
+            UnExposedTile = tiles != null ? tiles.Length : 0;
+            FlaggedTileCount = 0;
+            GameTime = new TimeSpan();
+            StopTime = new TimeSpan();
         }
 
         /// <summary>
@@ -224,12 +309,27 @@ namespace XamarinForm.Games
                 case TileStatus.Exposed:
                     if (Status == GameStatus.Initialized)
                     {
+                        Status = GameStatus.Start;
+                        startTime = DateTime.Now;
+                        //使用设备时钟功能启动一个循环计时器。
+                        Device.StartTimer(TimeSpan.FromMilliseconds(10), () =>
+                        {
+                            if (endTime != null&& endTime>startTime)
+                            {
+                                GameTime = endTime - startTime;
+                            }
+                            else
+                            {
+                                GameTime = DateTime.Now - startTime;
+                            }
+                            return Status != GameStatus.End;
+                        });
+                        
                         CreateMine();
                         //SetTileSurroundingMineCount();
-                        Status = GameStatus.Status;
                         Label label = tile.Content as Label;
                         label.Text = tile.SurroundingMineCount > 0 ? tile.SurroundingMineCount.ToString() : " ";
-                        startTime = DateTime.Now;
+
                         if (onGameStart != null)
                             onGameStart.Invoke();
                     }
@@ -246,43 +346,67 @@ namespace XamarinForm.Games
                     }
                     else
                     {
-                        Status = GameStatus.End;
                         endTime = DateTime.Now;
+                        Status = GameStatus.End;
                         if (onDefeated != null)
                         {
                             onDefeated.Invoke();
                         }
                     }
-                    unExposedTile--;
                     break;
                 case TileStatus.Hidden:
-                    FlaggedTileCount--;
                     break;
                 case TileStatus.Flagged:
-                    FlaggedTileCount++;
                     break;
             }
+            TileStatusCount();
             if (IsVictory())
             {
+                endTime = DateTime.Now;
+                Status = GameStatus.End;
                 if (onVictory != null)
                 {
                     onVictory.Invoke();
                 }
             }
         }
-
+        
         /// <summary>
         /// 是否已胜利
         /// </summary>
         /// <returns></returns>
         Boolean IsVictory()
         {
+            //foreach (Tile tile in tiles)
+            //{
+            //    if (tile.IsMine && tile.Status != TileStatus.Flagged) return false;
+            //    if (!tile.IsMine && tile.Status != TileStatus.Exposed) return false;
+            //}
+            //return true;
+            return FlaggedTileCount == MineCount && FlaggedTileCount == unExposedTile;
+        }
+
+        /// <summary>
+        /// 计算未暴露雷区及标记雷区数量
+        /// </summary>
+        void TileStatusCount()
+        {
+            int _flaggedTileCount = 0, _unExposed = 0;
             foreach (Tile tile in tiles)
             {
-                if (tile.IsMine && tile.Status != TileStatus.Flagged) return false;
-                if (!tile.IsMine && tile.Status != TileStatus.Exposed) return false;
+                if (tile.Status == TileStatus.Flagged)
+                {
+                    _flaggedTileCount++;
+                }
+
+                if (tile.Status != TileStatus.Exposed)
+                {
+                    _unExposed++;
+                }
             }
-            return true;
+
+            FlaggedTileCount = _flaggedTileCount;
+            UnExposedTile = _unExposed;
         }
 
         /// <summary>
@@ -398,4 +522,5 @@ namespace XamarinForm.Games
         }
         #endregion
     }
+    
 }

@@ -32,6 +32,12 @@ namespace XamarinForm.Services
             return false;
         }
 
+        /// <summary>
+        /// 验证登录用户名和密码
+        /// </summary>
+        /// <param name="UserName">用户名</param>
+        /// <param name="Passwrod">密码</param>
+        /// <returns></returns>
         private static Boolean VeriFicationLoginUsername(String UserName, String Passwrod)
         {
             return true;

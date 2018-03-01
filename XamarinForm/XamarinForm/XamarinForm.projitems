@@ -26,6 +26,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Delegates\LoginViewLoginButtonClickHandle.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Delegates\MineGameHandle.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ErrorPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\StringExtension.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\ViewExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Games\Board.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Games\Tile.cs" />
@@ -78,6 +79,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Pages\Effect\TestDraggableBoxViewPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\Effect\TestLabelShadowEffetPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\Games\MineClearancePage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\HttpReque\TestPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\NavigationPages\Page1.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\NavigationPages\Page3.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\NavigationPages\Page2.cs" />
@@ -104,14 +106,13 @@
     <Compile Include="$(MSBuildThisFileDirectory)Views\ListMenuItem.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\LoginView.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\PDFWebView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WebApiService\HttpRequestFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WebApiService\HttpClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WebApiService\RequestParamater.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)WelcomePage.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Images\RedBug.png" />
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Images\Xamarin120.png" />
-    <Content Include="$(MSBuildThisFileDirectory)Resources\drawable\folder.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="$(MSBuildThisFileDirectory)Resources\drawable\page_white_text.png" />
   </ItemGroup>
 </Project>
