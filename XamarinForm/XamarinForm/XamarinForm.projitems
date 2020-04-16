@@ -25,7 +25,17 @@
     <Compile Include="$(MSBuildThisFileDirectory)Delegates\ListMenuItemClickHandle.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Delegates\LoginViewLoginButtonClickHandle.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Delegates\MineGameHandle.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DependencyServices\AbstractNotificationsImpl.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DependencyServices\FileHelperFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DependencyServices\IBackgroundService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DependencyServices\IFileHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DependencyServices\INotificationService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DependencyServices\MyNotification\INotificationService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DependencyServices\MyNotification\NotificationConfig.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DependencyServices\Notification.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DependencyServices\ServiceTaskCounter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ErrorPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EventArg\SlideViewReleasedEventArg.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\StringExtension.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\ViewExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Games\Board.cs" />
@@ -40,10 +50,13 @@
     <Compile Include="$(MSBuildThisFileDirectory)MainPage_Test.xaml.cs">
       <DependentUpon>MainPage_Test.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Models\DataItem.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\LoginBill.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MyMasterDetailPage2.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MyMasterDetailPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\MenuItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Acr.Notifications\TestMyNotificationPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Acr.Notifications\TestNotificationPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\Alter\TestAlterPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\Animation\Basic\ImageTranslateAnimationPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\Animation\Basic\ImageRelativeScaleAnimationPage.cs" />
@@ -74,11 +87,18 @@
     <Compile Include="$(MSBuildThisFileDirectory)Pages\Control\TestDigitalClockPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\Control\TestEditorPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\Control\TestEntryPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Control\TestListViewContextActionsPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\Control\TestPDFWebViewPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Control\TestCircularProgressViewPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\Control\TestProgressBarPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Control\TestUserDialogsPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\DependencyServices\TestBackgroundServicePage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\Effect\TestDraggableBoxViewPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\Effect\TestLabelShadowEffetPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Effect\TestLeftSlideContentViewPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Effect\TestLeftSlideViewCellPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\Games\MineClearancePage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\HttpReque\TestHttpClientPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\HttpReque\TestPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\NavigationPages\Page1.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\NavigationPages\Page3.cs" />
@@ -89,6 +109,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Services\ListMenuDataStore.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\LoginService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\MockDataStore.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SqlLite\NotificationsDataBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Utilities\AppConstant.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Utilities\ClassAndSubclasses.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Utilities\ClassAndSubclassesFactory.cs" />
@@ -96,19 +117,25 @@
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\BaseViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\ListMenuPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\SimpleColorPickerPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\CircularProgressView.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\DigitalClockView.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\DraggableBoxView.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\GridMenu.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\GridMenuItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\LeftSlideContentView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\LeftSlideViewCell.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\ListMenu.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\ListMenuAnimate.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\ListMenuCell.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\ListMenuItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\ListViewButtonCell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\ListViewContextActionsCell.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\LoginView.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\PDFWebView.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)WebApiService\HttpRequestFactory.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)WebApiService\HttpClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WebApiService\MyHttpClient.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)WebApiService\RequestParamater.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WebApiService\WebApiClient.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)WelcomePage.cs" />
   </ItemGroup>
   <ItemGroup>

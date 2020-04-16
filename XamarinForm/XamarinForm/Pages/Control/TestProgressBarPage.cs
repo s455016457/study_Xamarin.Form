@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
 using Xamarin.Forms;
@@ -33,26 +34,18 @@ namespace XamarinForm.Pages.Control
             };
             double progress = 0;
 
-            var autoEvent = new AutoResetEvent(false);
-
-            Timer timer = new Timer(p =>
+            Device.StartTimer(TimeSpan.FromSeconds(.02), () =>
             {
-                progress += 0.01;
+                progress += 0.003;
+                progress = progress > 1 ? 1 : progress;
                 progressBar.ProgressTo(progress, 0, Easing.Linear);
-                if (progress == 1)
-                    if (p is AutoResetEvent)
-                    {
-                        AutoResetEvent callBack = p as AutoResetEvent;
-                        callBack.Set();
-                    }
-            }, state: autoEvent, dueTime: 0, period: 200);
-
-            Task.Factory.StartNew(() =>
-            {
-                autoEvent.WaitOne();
-                timer.Dispose();
-                DisplayAlert("结果", "下载完成！", "确定");
-                Debug.WriteLine("进度条执行完成！");
+                if (progress >= 1)
+                {
+                    DisplayAlert("结果", "下载完成！", "确定");
+                    Debug.WriteLine("进度条执行完成！");
+                    return false;
+                }
+                return true;
             });
 
             layout.Children.Add(progressBar);
@@ -79,23 +72,17 @@ double progress = 0;
 
 var autoEvent = new AutoResetEvent(false);
 
-Timer timer = new Timer(p =>
+Device.StartTimer(TimeSpan.FromSeconds(.02), () =>
 {
     progress += 0.01;
     progressBar.ProgressTo(progress, 0, Easing.Linear);
-    if (progress == 1)
-        if (p is AutoResetEvent)
-        {
-            AutoResetEvent callBack = p as AutoResetEvent;
-            callBack.Set();
-        }
-}, state: autoEvent, dueTime: 0, period: 200);
-
-Task.Factory.StartNew(() =>
-{
-    autoEvent.WaitOne();
-    timer.Dispose();
-    DisplayAlert(""结果"", ""下载完成！"", ""确定"");
+    if (progress >= 1)
+    {
+        DisplayAlert(""结果"", ""下载完成！"", ""确定"");
+        Debug.WriteLine(""进度条执行完成！"");
+        return false;
+    }
+    return true;
 });
 "
             };

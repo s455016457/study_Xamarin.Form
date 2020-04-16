@@ -1,0 +1,11 @@
+E:\study\study_Xamarin.Form\MyIOS\bin\iPhoneSimulator\Debug\MyIOS.exe
+E:\study\study_Xamarin.Form\MyIOS\bin\iPhoneSimulator\Debug\MyIOS.pdb
+E:\study\study_Xamarin.Form\MyIOS\obj\iPhoneSimulator\Debug\ibtool\_BundleResourceWithLogicalName.items
+E:\study\study_Xamarin.Form\MyIOS\obj\iPhoneSimulator\Debug\actool\_PartialAppManifest.items
+E:\study\study_Xamarin.Form\MyIOS\obj\iPhoneSimulator\Debug\actool\_BundleResourceWithLogicalName.items
+E:\study\study_Xamarin.Form\MyIOS\obj\iPhoneSimulator\Debug\optimized\Entitlements.plist
+E:\study\study_Xamarin.Form\MyIOS\obj\iPhoneSimulator\Debug\optimized\
+E:\study\study_Xamarin.Form\MyIOS\obj\iPhoneSimulator\Debug\MyIOS.csproj.CoreCompileInputs.cache
+E:\study\study_Xamarin.Form\MyIOS\obj\iPhoneSimulator\Debug\MyIOS.exe
+E:\study\study_Xamarin.Form\MyIOS\obj\iPhoneSimulator\Debug\MyIOS.pdb
+E:\study\study_Xamarin.Form\MyIOS\obj\iPhoneSimulator\Debug\MyIOS.csprojResolveAssemblyReference.cache

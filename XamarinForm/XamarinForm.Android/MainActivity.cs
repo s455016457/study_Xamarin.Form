@@ -7,6 +7,8 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using System.Threading.Tasks;
+using Acr.UserDialogs;
+using Android.Util;
 
 namespace XamarinForm.Droid
 {
@@ -15,13 +17,23 @@ namespace XamarinForm.Droid
     {
         protected override void OnCreate(Bundle bundle)
         {
-            TabLayoutResource = Resource.Layout.Tabbar;
-            ToolbarResource = Resource.Layout.Toolbar;
+            try
+            {
+                TabLayoutResource = Resource.Layout.Tabbar;
+                ToolbarResource = Resource.Layout.Toolbar;
 
-            base.OnCreate(bundle);
+                base.OnCreate(bundle);
 
-            global::Xamarin.Forms.Forms.Init(this, bundle);
-            LoadApplication(new App());
+#if !DEBUG
+            UserDialogs.Init(this); //Debug状态注册失败
+#endif
+                global::Xamarin.Forms.Forms.Init(this, bundle);
+                LoadApplication(new App());
+            }
+            catch (Exception ex)
+            {
+                Log.Debug("myDebug", ex.Message);
+            }
         }
     }
 }

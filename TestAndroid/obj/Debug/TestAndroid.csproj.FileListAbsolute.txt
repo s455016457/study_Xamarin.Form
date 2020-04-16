@@ -2,6 +2,7 @@ E:\study\study_Xamarin.Form\TestAndroid\bin\Debug\TestAndroid.dll
 E:\study\study_Xamarin.Form\TestAndroid\bin\Debug\TestAndroid.pdb
 E:\study\study_Xamarin.Form\TestAndroid\bin\Debug\TestAndroid.TestAndroid.apk
 E:\study\study_Xamarin.Form\TestAndroid\bin\Debug\TestAndroid.TestAndroid-Signed.apk
+E:\study\study_Xamarin.Form\TestAndroid\obj\Debug\TestAndroid.csprojResolveAssemblyReference.cache
 E:\study\study_Xamarin.Form\TestAndroid\obj\Debug\TestAndroid.csproj.CoreCompileInputs.cache
 E:\study\study_Xamarin.Form\TestAndroid\obj\Debug\TestAndroid.dll
 E:\study\study_Xamarin.Form\TestAndroid\obj\Debug\TestAndroid.pdb
@@ -10,9 +11,6 @@ E:\study\study_Xamarin.Form\TestAndroid\obj\Debug\res\layout\main.xml
 E:\study\study_Xamarin.Form\TestAndroid\obj\Debug\res\values\strings.xml
 E:\study\study_Xamarin.Form\TestAndroid\obj\Debug\R.cs.flag
 E:\study\study_Xamarin.Form\TestAndroid\obj\Debug\uploadflags.txt
-E:\study\study_Xamarin.Form\TestAndroid\obj\Debug\TestAndroid.csprojResolveAssemblyReference.cache
-E:\study\study_Xamarin.Form\TestAndroid\bin\Debug\TestAndroid.dll.mdb
-E:\study\study_Xamarin.Form\TestAndroid\obj\Debug\android\assets\TestAndroid.dll.mdb
 E:\study\study_Xamarin.Form\TestAndroid\bin\Debug\TestAndroid.dll
 bin\Debug\Mono.Android.pdb
 bin\Debug\mscorlib.pdb

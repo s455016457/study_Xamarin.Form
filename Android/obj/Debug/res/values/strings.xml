@@ -1,0 +1,1 @@
+<resources><string name="app_name">Android</string><string name="hello_world">Hello World</string><string name="test_notifications">测试通知</string><string name="test_service">测试服务</string><string name="send">发送</string><string name="Satrt">开启</string><string name="Stop">停止</string></resources>

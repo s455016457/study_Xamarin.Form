@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 
 using Xamarin.Forms;
+using XamarinForm.DependencyServices;
 using XamarinForm.Models;
 using XamarinForm.Pages.Control;
 using XamarinForm.Services;
@@ -11,20 +12,63 @@ using XamarinForm.Utilities;
 
 namespace XamarinForm
 {
-	public partial class App : Application
-	{
+    public partial class App : Application
+    {
         public static LoginBill LoginBill { get; private set; }
         /// <summary>
         /// 用户已登录
         /// </summary>
         public static bool IsUserLoggedIn { get; set; }
-        
+
+        /// <summary>
+        /// 消息服务
+        /// </summary>
+        public static INotificationService NotificationService
+        {
+            get
+            {
+                var service = DependencyService.Get<INotificationService>();
+                if (!service.RequestPermission().Result)
+                {
+                    return null;
+                }
+                return service;
+            }
+        }
+
+        /// <summary>
+        /// 消息服务
+        /// </summary>
+        public static DependencyServices.MyNotification.INotificationService MyNotificationService
+        {
+            get
+            {
+                var service = DependencyService.Get<DependencyServices.MyNotification.INotificationService>();
+                if (!service.RequestPermission().Result)
+                {
+                    return null;
+                }
+                return service;
+            }
+        }
+
+        /// <summary>
+        /// 后台服务
+        /// </summary>
+        public static IBackgroundService BackgroundService { get; } = DependencyService.Get<IBackgroundService>();
+
         public App ()//每次打开应用程序都会执行该方法，无论是第一次打开还是Sleep后打开
 		{
 			InitializeComponent();
             //MainPage = new XamarinForm.MainPage();
             //IList<ToolbarItem> toolbarItem = new List<ToolbarItem>();
-            // MainPage = new NavigationPage(new MyMasterDetailPage()) /*{ BarBackgroundColor = Color.Green, BarTextColor = Color.Blue,Title="示例APP" }*/;
+            // MainPage = new NavigationPage(new MyMasterDetailPage()) /*{ BarBackgroundColor = Color.Green, BarTextColor = Color.Blue,Title="示例APP" }
+
+            if (Device.RuntimePlatform.Equals(Device.Android))
+            {
+                //Acr.UserDialogs.UserDialogs.Init(() => (Activity)Forms.Context);
+            }
+
             RecoverLoginBill();
 
             IsUserLoggedIn = LoginService.VerificationBill(LoginBill);
@@ -43,7 +87,13 @@ namespace XamarinForm
             //{
             //    MainPage = new NavigationPage(new LoginPage());
             //    //MainPage = new MyMasterDetailPage();
-            //}            
+            //}
+
+            MessagingCenter.Subscribe<DependencyServices.MyNotification.NotificationConfig>(this, "SendNotification", config => {
+                Device.BeginInvokeOnMainThread(() => {                    
+                    MyNotificationService.Send(config);
+                });
+            });
         }
 
         /// <summary>

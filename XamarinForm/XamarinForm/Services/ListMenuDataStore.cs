@@ -58,6 +58,36 @@ namespace XamarinForm.Services
                 ParentMenuItem = controlMenuItem
             });
 
+            controlMenuItem.ChildrenMenu.Add(new Models.MenuItem("TestCircularProgressViewPage", "环形进度条", ImageSource.FromFile("setting.png"))
+            {
+                ParentMenuItem = controlMenuItem
+            });
+
+            controlMenuItem.ChildrenMenu.Add(new Models.MenuItem("TestUserDialogsPage", "UserDialog插件", ImageSource.FromFile("setting.png"))
+            {
+                ParentMenuItem = controlMenuItem
+            });
+            
+            controlMenuItem.ChildrenMenu.Add(new Models.MenuItem("TestNotificationPage", "Notification插件", ImageSource.FromFile("setting.png"))
+            {
+                ParentMenuItem = controlMenuItem
+            });
+            
+            controlMenuItem.ChildrenMenu.Add(new Models.MenuItem("TestMyNotificationPage", "MyNotification插件", ImageSource.FromFile("setting.png"))
+            {
+                ParentMenuItem = controlMenuItem
+            });
+            
+            controlMenuItem.ChildrenMenu.Add(new Models.MenuItem("TestBackgroundServicePage", "后台服务", ImageSource.FromFile("setting.png"))
+            {
+                ParentMenuItem = controlMenuItem
+            });
+
+            controlMenuItem.ChildrenMenu.Add(new Models.MenuItem("TestListViewContextActionsPage", "ListView上下文行为", ImageSource.FromFile("setting.png"))
+            {
+                ParentMenuItem = controlMenuItem
+            });
+
             controlMenuItem.ChildrenMenu.Add(new Models.MenuItem("TestAlterPage", "Alter测试", ImageSource.FromFile("setting.png"))
             {
                 ParentMenuItem = controlMenuItem
@@ -98,6 +128,14 @@ namespace XamarinForm.Services
                 ParentMenuItem = effectMenuItem
             });
             effectMenuItem.ChildrenMenu.Add(new Models.MenuItem("TestDraggableBoxViewPage", "DraggableBoxView【可拖拽矩形】", ImageSource.FromFile("setting.png"))
+            {
+                ParentMenuItem = effectMenuItem
+            });
+            effectMenuItem.ChildrenMenu.Add(new Models.MenuItem("TestLeftSlideContentViewPage", "LeftSlideContentView【左滑视图】", ImageSource.FromFile("setting.png"))
+            {
+                ParentMenuItem = effectMenuItem
+            });
+            effectMenuItem.ChildrenMenu.Add(new Models.MenuItem("TestLeftSlideViewCellPage", "TestLeftSlideViewCellPage【左滑视图列表】", ImageSource.FromFile("setting.png"))
             {
                 ParentMenuItem = effectMenuItem
             });
@@ -160,6 +198,11 @@ namespace XamarinForm.Services
                 ParentMenuItem = httpRequestMenuItem
             });
 
+            httpRequestMenuItem.ChildrenMenu.Add(new Models.MenuItem("TestHttpClientPage", "测试HttpClient", ImageSource.FromFile("setting.png"))
+            {
+                ParentMenuItem = httpRequestMenuItem
+            });
+
             for (int i = 0; i < 5; i++)
             {
                 String MenuItemId = "MenuItemId_" + i;
@@ -201,6 +244,8 @@ namespace XamarinForm.Services
                     return new Pages.Control.TestEntryPage();
                 case "TestEditorPage":
                     return new Pages.Control.TestEditorPage();
+                case "TestListViewContextActionsPage":
+                    return new Pages.Control.TestListViewContextActionsPage();
                 case "TestAlterPage":
                     return new Pages.Alter.TestAlterPage();
                 case "TestDigitalClockPage":
@@ -209,6 +254,16 @@ namespace XamarinForm.Services
                     return new Pages.Control.TestPDFWebViewPage();
                 case "TestProgressBarPage":
                     return new Pages.Control.TestProgressBarPage();
+                case "TestCircularProgressViewPage":
+                    return new Pages.Control.TestCircularProgressViewPage();
+                case "TestUserDialogsPage":
+                    return new Pages.Control.TestUserDialogsPage();
+                case "TestNotificationPage":
+                    return new Pages.Acr.Notifications.TestNotificationPage();
+                case "TestMyNotificationPage":
+                    return new Pages.Acr.Notifications.TestMyNotificationPage();
+                case "TestBackgroundServicePage":
+                    return new Pages.DependencyServices.TestBackgroundServicePage();
                 case "TestAttachedBehaviorPage":
                     return new Pages.Behavior.TestAttachedBehaviorPage();
                 case "TestBehaviorsPage":
@@ -221,6 +276,10 @@ namespace XamarinForm.Services
                     return new Pages.Effect.TestLabelShadowEffetPage();
                 case "TestDraggableBoxViewPage":
                     return new Pages.Effect.TestDraggableBoxViewPage();
+                case "TestLeftSlideContentViewPage":
+                    return new Pages.Effect.TestLeftSlideContentViewPage();
+                case "TestLeftSlideViewCellPage":
+                    return new Pages.Effect.TestLeftSlideViewCellPage();
                 case "TestBasicAnimationPage":
                     return new Pages.Animation.TestBasicAnimationPage();
                 case "TestCustomAnimationPage":
@@ -235,6 +294,8 @@ namespace XamarinForm.Services
                     return new Pages.Games.MineClearancePage();
                 case "TestPage":
                     return new Pages.HttpReque.TestPage();
+                case "TestHttpClientPage":
+                    return new Pages.HttpReque.TestHttpClientPage();
                 default:
                     return new ErrorPage("错误", "未知菜单ID【" + menuItemId + "】");
             }

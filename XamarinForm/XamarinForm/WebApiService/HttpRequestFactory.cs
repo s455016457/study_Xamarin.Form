@@ -28,6 +28,7 @@ namespace XamarinForm.WebApiService
             request.ContentType = "application/json";
             request.Headers.Add(HttpRequestHeader.AcceptCharset, "GBK,utf-8");
             request.Method = POST;
+            request.Headers.Add(HttpRequestHeader.Cookie, "Uid=admin; expires=Tue, 10 Apr 2018 10:38:54 GMT; max-age=2592000; domain=localhost; path=/; httponly");
 
             String appparam = requestParamater.ToJson();
             RequestAddSignature(request.Headers, appparam);

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">MyAndroid</string>
+  <string name="hello_world">Hello World</string>
+  <string name="test_notifications">测试通知</string>
+  <string name="test_service">测试服务</string>
+  <string name="send">发送</string>
+  <string name="satrt">开启</string>
+  <string name="stop">停止</string>
+  <string name="binder">绑定</string>
+  <string name="binder_service">绑定服务</string>
+  <string name="un_binder">取消绑定</string>
+  <string name="un_binder_service">取消绑定服务</string>
+  <string name="get_timestamper_service">获取服务时间</string>
+  <string name="service_not_connected"> 请稍等，服务没有连接。</string>
+</resources>
